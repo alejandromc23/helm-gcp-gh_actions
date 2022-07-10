@@ -15,7 +15,7 @@ env:
 
 jobs:
   setup-build-publish-deploy:
-    name: Build, push and deploy routine-checker-chart'
+    name: Build, push and deploy chart'
     runs-on: ubuntu-latest
     environment: production
 
