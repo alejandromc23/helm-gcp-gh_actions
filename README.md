@@ -1,4 +1,5 @@
-# nodejs-ts-gke-cluster
+# helm-gcp-deploy-with-ghactions
+
 An example of a nodejs project automated to be deployed on Google Kubernetes Engine through github actions based on [github docs](https://docs.github.com/es/actions/deployment/deploying-to-your-cloud-provider/deploying-to-google-kubernetes-engine) ;)
 
 Based on 
