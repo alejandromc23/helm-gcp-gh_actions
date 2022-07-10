@@ -1,0 +1,8 @@
+/node_modules
+/dist
+.idea
+logs
+yarn-error.log
+start
+key.json
+.env.prod

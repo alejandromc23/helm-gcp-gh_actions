@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Values.application.name}}
+  labels:
+    name: {{.Values.application.name}}
+spec:
+  replicas: {{.Values.replicaCount}}
+  selector:
+    matchLabels:
+      app: {{.Values.pod.name}}
+  template:
+    metadata:
+      labels:
+        app: {{.Values.pod.name}}
+
+    spec:
+      containers:
+        - name: server
+          image: {{.Values.image.repository}}:{{ .Values.image.tag | default .Chart.AppVersion }}
+          imagePullPolicy: {{.Values.image.pullPolicy}}
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 100m
+          envFrom:
+            - secretRef:
+                name: <secret-name>

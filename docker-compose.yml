@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  server:
+    container_name: server
+    image:  ${TAG_SERVER:-eu.gcr.io/gcloud-project-id/image-name}
+    command: ./start.sh
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - ENV_FILE_PATH=.env
+    volumes:
+      - .:/usr/app
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - ${PORT:-3000}:${PORT:-3000}

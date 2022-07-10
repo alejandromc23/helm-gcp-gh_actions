@@ -1,0 +1,24 @@
+# Default values for routine-checker-chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: <image-repository>
+  pullPolicy: Always
+  tag: ""
+
+application:
+  name: <app-name>
+
+service:
+  name: <service-name>
+
+pod:
+  name: <pod-name>
+
+environment:
+  ENV_VAR1: <env-var-1>
+  ENV_VAR2: <env-var-2>
+  ENV_VAR3: <env-var-3>
